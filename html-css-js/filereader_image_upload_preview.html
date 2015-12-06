@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<form>
+	<input type="file" id="input">
+</form>
+<div id="preview"></div>
+<script type="text/javascript">
+	var input = document.getElementById('input');
+	var preview = document.getElementById('preview');
+
+	if (typeof FileReader == "undefined") {
+		preview.innerHTML = "<p>抱歉，你的浏览器不支持 FileReader</p>";
+	} else{
+		input.addEventListener("change",previewImg,false);
+	};
+
+	function previewImg() {
+		var file = this.files[0];
+		var reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function() {
+			preview.innerHTML = "<img src='" + this.result + "'>"
+		}
+	}
+</script>
+</body>
+</html>
