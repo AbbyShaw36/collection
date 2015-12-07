@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>雪花纷飞</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<canvas width="420" height="280" style="border: 1px solid black" id="mc"></canvas>
+<script type="text/javascript">
+	/*
+		该方法绘制花朵
+		n控制花朵的瓣数
+		dx，dy控制花朵的位置
+		size控制花朵的大小
+		length控制花瓣长度
+	*/
+	function createFlower(context , n , dx , dy , size , length) {
+		context.beginPath();
+		context.moveTo(dx , dy + size);
+		var dig = 2 * Math.PI / n;
+		for (var i = 0; i < n+1; i++) {
+			var ctrlX = Math.sin((i - 0.5) * dig) * length + dx;
+			var ctrlY = Math.cos((i - 0.5) * dig) * length + dx;
+			var x = Math.sin(i * dig) * size + dx;
+			var y = Math.sin(i * dig) * size + dy;
+			context.quadraticCurveTo(ctrlX , ctrlY , x , y);//绘制曲线
+		};
+		context.closePath();
+	}
+
+	//创建花朵数组，定义每个花朵的初始位置
+	snowPos = [
+		{x : 20, y : 4},
+		{x : 60, y : 4},
+		{x : 100, y : 4},
+		{x : 140, y : 4},
+		{x : 180, y : 4},
+		{x : 220, y : 4},
+		{x : 260, y : 4},
+		{x : 300, y : 4},
+		{x : 340, y : 4},
+		{x : 380, y : 4}
+	];
+
+	function fall(context) {
+		context.fillStyle = "#000";
+		context.fillRect(0,0,420,280);
+		context.fillStyle = "#fff";
+		for (var i = 0 , len = snowPos.length; i < len; i++) {
+			context.save();//保存当前状态
+			context.translate(snowPos[i].x , snowPos[i].y);//平移
+			context.rotate((Math.random() * 6 -3) * Math.PI / 10);//旋转
+			snowPos[i].y += Math.random() * 8;//向下移动
+			if (snowPos[i].y > 280) {
+				snowPos[i].y = 4;
+			};//到达最下，返回顶部
+			createFlower(context,6,0,0,1,8);//创建雪花图案
+			context.fill();//填充
+			context.restore();//恢复之前保存的状态
+		};
+	}
+
+	var canvas = document.getElementById('mc');
+	var ctx = canvas.getContext('2d');
+	setInterval("fall(ctx)",200);
+</script>
+</body>
+</html>
