@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div {
+			position: relative;
+			width: 400px;
+			height: 400px;
+			margin: 0 auto;
+			border: 1px solid #dcdcdc;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		div:after {
+			content: "";
+		    display: block;
+		    height: 8px;
+		    width: 8px;
+		    background-color: maroon;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -4px;
+		    margin-left: -4px;
+		    border-radius: 50%;
+		    z-index: 11;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			transform-origin: 100% 100%;
+			background-color: #eee;
+			transform: skew(50deg); /*该角度 = 90 - 所需圆心角的值*/
+		}
+		a {
+			display: block;
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			bottom: -200px;
+			right: -200px;
+			background-color: #f00;
+			transform: skew(-50deg) rotate(-70deg); /*前者等于li倾斜角度的负值，后者等于90-倾斜角度/2*/
+			border-radius: 50%;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				<a href="#">123</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
