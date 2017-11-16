@@ -1,0 +1,107 @@
+/*
+	常用样式
+ 	兼容：IE9
+ */
+
+/*个性化*/
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+html { width: 100%; height: 100%; overflow-y: auto; background: #fff; }
+input:not[type=raido], input:not[type=checkbox], button, textarea { border: none; outline: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+/*float*/
+.fl { float: left; }
+.fr { float: right; }
+.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after { display: block; height: 0; visibility: hidden; clear: both; content: ""; }
+
+/*padding*/
+.p10 { padding: 10px; }
+.p20 { padding: 20px; }
+.pt10 { padding-top: 10px; }
+.pr10 { padding-right: 10px; }
+.pb10 { padding-bottom: 10px; }
+.pl10 { padding-left: 10px; }
+.pt20 { padding-top: 20px; }
+.pr20 { padding-right: 20px; }
+.pb20 { padding-bottom: 20px; }
+.pl20 { padding-left: 20px; }
+
+/*margin*/
+.m10 { margin: 10px; }
+.m20 { margin: 20px; }
+.mt10 { margin-top: 10px; }
+.mr10 { margin-right: 10px; }
+.mb10 { margin-bottom: 10px; }
+.ml10 { margin-left: 10px; }
+.mt20 { margin-top: 20px; }
+.mr20 { margin-right: 20px; }
+.mb20 { margin-bottom: 20px; }
+.ml20 { margin-left: 20px; }
+
+/*text align*/
+.tc { text-align: center; }
+.tl { text-align: left; }
+.tr { text-align: right; }
+
+/*text overflow ellipsis*/
+.toe { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/*form components*/
+.input { height: 30px; padding: 0 4px; border: 1px solid #dcdcdc; border-radius: 2px; }
+.checkbox { position: relative; display: inline-block; cursor: pointer; }
+.checkbox input[type=checkbox] { position: absolute; left: 0; opacity: 0; }
+.checkbox span { display: block; vertical-align: middle; font-size: 14px; }
+.checkbox span:before { display: inline-block; width: 18px; height: 18px; margin-right: 4px; border: 1px solid #dcdcdc; border-radius: 2px; vertical-align: middle; text-align: center; line-height: 18px; content: ""; font-size: 14px; }
+.checkbox input[type=checkbox]:checked + span:before { content: "\2714"; }
+.radio { position: relative; display: inline-block; cursor: pointer; }
+.radio input[type=radio] { position: absolute; left: 0; opacity: 0; }
+.radio span { display: block; vertical-align: middle; font-size: 14px; }
+.radio span:before { display: inline-block; width: 16px; height: 16px; margin-right: 4px; border: 1px solid #dcdcdc; border-radius: 50%; box-sizing: border-box; vertical-align: middle; text-align: center; content: ""; font-size: 12px; }
+.radio input[type=radio]:checked + span:before { border-width: 4px; background: #1ba1e2; }
+
+/*布局*/
+
+/*两列右侧自适应布局*/
+.c2la_l { position: relative; float: left; width: 360px; margin-right: -360px; }
+.c2la_r { float: right; width: 100%; }
+.c2la_rc { margin-left: 380px; }
+
+/*两列右侧自适应布局*/
+.c2ra_l { float: left; width: 100%; }
+.c2ra_lc { margin-right: 380px; }
+.c2ra_r { position: relative; float: right; width: 360px; margin-left: -360px; }
+
+/*三列中间自适应布局*/
+.c3ca_col { float: left; }
+.c3ca_l, .c3ca_r { position: relative; width: 180px; }
+.c3ca_l { margin-right: -180px; }
+.c3ca_r { float: right; margin-left: -180px; }
+.c3ca_c { width: 100%; }
+.c2ca_cc { margin: 0 200px; }
+
+/* media */
+
+/* 横屏 */
+@media screen and (orientation:landscape){
+}
+/* 竖屏 */
+@media screen and (orientation:portrait){
+}
+/* 窗口宽度<960,设计宽度=768 */
+@media screen and (max-width:959px){
+}
+/* 窗口宽度<768,设计宽度=640 */
+@media screen and (max-width:767px){
+}
+/* 窗口宽度<640,设计宽度=480 */
+@media screen and (max-width:639px){
+}
+/* 窗口宽度<480,设计宽度=320 */
+@media screen and (max-width:479px){
+}
+/* windows UI 贴靠 */
+@media screen and (-ms-view-state:snapped){
+}
+/* 打印 */
+@media print{
+}
