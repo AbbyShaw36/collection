@@ -10,6 +10,7 @@
 		email: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
 		cn: /^[\u4e00-\u9fa5]*$/,
 		zip: /^\d{6}$/,
+		price: /^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$/,
 	};
 
 	var _ = {};
@@ -50,12 +51,46 @@
 		return regList.zip.test(value);
 	}
 
+	// 数值范围
+	function inRange(value, min, max) {
+		value = +value;
+		min = +min;
+		max = +max;
+
+		if (isNaN(value) || isNaN(min) || isNaN(max)) {
+			throw new Error("All arguments must be numbers");
+		}
+
+		if (min === max) {
+			return false;
+		}
+
+		min = Math.min(min, max, value);
+		max = Math.max(min, max, value);
+
+		return min === value || max === value;
+	}
+
+	// 整数
+	function isInteger(value) {
+		return parseInt(value, 10) === value;
+	}
+
+	// 价格
+	function isPrice(value) {
+		value = trim(value);
+		return regList.price.test(value);
+	}
+
 	_.trim = trim;
 	_.isEmpty = isEmpty;
 	_.equal = equal;
 	_.isEmail = isEmail;
 	_.isChinese = isChinese;
 	_.isZIP = isZIP;
+	_.inRange = inRange;
+	_.isInteger = isInteger;
+	_.isPrice = isPrice;
 
 	var ruleMap = {
 		required: function(value) {
@@ -64,6 +99,8 @@
 		email: isEmail,
 		cn: isChinese,
 		zip: isZIP,
+		price: isPrice,
+		integer: isInteger,
 	};
 
 	function isArray(arr) {
