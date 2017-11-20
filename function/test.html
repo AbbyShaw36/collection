@@ -5,8 +5,16 @@
 	<title>test</title>
 </head>
 <body>
-	<script src=".js"></script>
+	<div class="test">abc</div>
+	<script src="dom/dom-class.js"></script>
 	<script>
+		var elem = document.getElementsByTagName("div")[0];
+
+		console.log(DomClass.get(elem));
+		DomClass.add(elem, "abc aaa");
+		console.log(DomClass.get(elem));
+		DomClass.remove(elem, "abc");
+		console.log(DomClass.get(elem));
 	</script>
 </body>
 </html>
