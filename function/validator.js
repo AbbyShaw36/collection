@@ -11,6 +11,7 @@
 		cn: /^[\u4e00-\u9fa5]*$/,
 		zip: /^\d{6}$/,
 		price: /^([0-9]+|[0-9]{1,3}(,[0-9]{3})*)(.[0-9]{1,2})?$/,
+		url: /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i,
 	};
 
 	var _ = {};
@@ -22,32 +23,38 @@
 
 	// 空字段
 	function isEmpty(value) {
-		return trim(value.toString()) === '';
+		return trim(value) === '';
 	}
 
 	// 两字段相等
 	function equal(value1, value2) {
-		value1 = trim(value1.toString());
-		value2 = trim(value2.toString());
+		value1 = trim(value1);
+		value2 = trim(value2);
 
 		return value1 === value2;
 	}
 
+	// URL
+	function isUrl(value) {
+		value = trim(value);
+		return regList.url.test(value);
+	}
+
 	// 邮箱字段
 	function isEmail(value) {
-		value = trim(value.toString());
+		value = trim(value);
 		return regList.email.test(value);
 	}
 
 	// 中文字段
 	function isChinese(value) {
-		value = trim(value.toString());
+		value = trim(value);
 		return regList.cn.test(value);
 	}
 
 	// 中国邮编
 	function isZIP(value) {
-		value = trim(value.toString());
+		value = trim(value);
 		return regList.zip.test(value);
 	}
 
@@ -91,6 +98,7 @@
 	_.inRange = inRange;
 	_.isInteger = isInteger;
 	_.isPrice = isPrice;
+	_.isUrl = isUrl;
 
 	var ruleMap = {
 		required: function(value) {
@@ -101,6 +109,7 @@
 		zip: isZIP,
 		price: isPrice,
 		integer: isInteger,
+		url: isUrl,
 	};
 
 	function isArray(arr) {
