@@ -4,3 +4,4 @@ a, button { cursor: pointer; }
 li { list-style: none; }
 textarea { overflow: auto; resize: none; }
 img { border: 0; }
+*:focus { outline: none; }
