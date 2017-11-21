@@ -1,0 +1,49 @@
+.tab {
+	width: 800px;
+}
+
+.tab_head {
+	position: relative;
+	height: 40px;
+	padding-right: 100px;
+}
+
+.tab_itemlist {
+	margin: 0;
+	padding: 0;
+}
+
+.tab_item a {
+	float: left;
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+}
+
+.tab_item_name {
+	max-width: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.tab_close {
+	margin-left: 10px;
+}
+
+.tab_bar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	line-height: 40px;
+	text-align: right;
+}
+
+.tab_btn {
+	display: inline-block;
+	padding: 0 5px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: #333;
+}

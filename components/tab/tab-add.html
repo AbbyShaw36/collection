@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/tab.css">
+	<link rel="stylesheet" href="css/tab-add.css">
+</head>
+<body>
+	<div class="page">
+		<div class="tab mt20">
+				<nav class="tab_head">
+					<ul class="tab_itemlist clearfix js_tab_itemlist" data-tab="mytab">
+						<li href="javascript: void(0);" class="tab_item js_tab_item active" data-tab="mytab">
+							<a href="javascript: void(0);" class="tab_item_name">选项1</a><a class="tab_close js_tab_close" href="javascript: void(0);">&#10006;</a>
+						</li>
+						<li href="javascript: void(0);" class="tab_item js_tab_item" data-tab="mytab">
+							<a href="javascript: void(0);" class="tab_item_name">选项2</a><a class="tab_close js_tab_close" href="javascript: void(0);">&#10006;</a>
+						</li>
+						<li href="javascript: void(0);" class="tab_item js_tab_item" data-tab="mytab">
+							<a href="javascript: void(0);" class="tab_item_name">选项3</a><a class="tab_close js_tab_close" href="javascript: void(0);">&#10006;</a>
+						</li>
+					</ul>
+					<div class="tab_bar">
+						<a href="javascript: void(0);" class="tab_btn tab_arrow_prev js_tab_arrow_prev">&lt;</a>
+						<a href="javascript: void(0);" class="tab_btn tab_arrow_next js_tab_arrow_next">&gt;</a>
+						<a href="javascript: void(0);" class="tab_btn tab_add js_tab_add">+</a>
+					</div>
+				</nav>
+			<div class="tab_body js_tab_body" data-tab="mytab">
+				<div class="tab_content js_tab_content active" data-tab="mytab">内容1</div>
+				<div class="tab_content js_tab_content" data-tab="mytab">内容2</div>
+				<div class="tab_content js_tab_content" data-tab="mytab">内容3</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../jquery-3.2.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/tab.js"></script>
+	<script src="js/tab-add.js"></script>
+	<script>
+		$(function() {
+			var mytab = new TabAdd("mytab");
+
+			$("body").on("click", ".js_tab_item[data-tab=mytab]", function() {
+				var index = $(this).index();
+
+				if (index === mytab.getCurrentIndex()) {
+					return;
+				}
+
+				mytab.goTo(index);
+			});
+
+			$("body").on("click", ".js_tab_close", function() {
+				var index = $(this).parents(".js_tab_item").index();
+				mytab.remove(index);
+			});
+
+			$("body").on("click", ".js_tab_add", function() {
+				console.log(mytab.getItemList());
+				var index = mytab.getItemList().length + 1;
+				var $item = $('<li href="javascript: void(0);" class="tab_item js_tab_item" data-tab="mytab"><a href="javascript: void(0);">选项' + index + '</a><a class="tab_close js_tab_close" href="javascript: void(0);">&#10006;</a></li>');
+				var $content = $('<div class="tab_content js_tab_content" data-tab="mytab">内容' + index + '</div>');
+
+				mytab.add($item, $content);
+				$(".tab_itemlist").slick('slickAdd',$item);
+			});
+
+			$(".tab_itemlist").slick({
+				infinite: false,
+				dots: false,
+				slidesToShow: 6,
+				slidesToScroll: 6,
+				variableWidth: true,
+				prevArrow: $(".js_tab_arrow_prev"),
+				nextArrow: $(".js_tab_arrow_next")
+			});
+		});
+	</script>
+</body>
+</html>

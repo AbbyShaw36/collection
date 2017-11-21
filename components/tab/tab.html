@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/tab.css">
+</head>
+<body>
+	<div class="page">
+		<div class="tab mt20">
+				<nav class="tab_head clearfix">
+					<a href="javascript: void(0);" class="tab_item js_tab_item active" data-tab="mytab">选项1</a>
+					<a href="javascript: void(0);" class="tab_item js_tab_item" data-tab="mytab">选项2</a>
+					<a href="javascript: void(0);" class="tab_item js_tab_item" data-tab="mytab">选项3</a>
+				</nav>
+			<div class="tab_body">
+				<div class="tab_content js_tab_content active" data-tab="mytab">内容1</div>
+				<div class="tab_content js_tab_content" data-tab="mytab">内容2</div>
+				<div class="tab_content js_tab_content" data-tab="mytab">内容3</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../jquery-3.2.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/tab.js"></script>
+	<script>
+		var mytab = new Tab("mytab");
+
+		$("body").on("click", ".js_tab_item[data-tab=mytab]", function() {
+			var index = $(this).index();
+
+			if (index === mytab.getCurrentIndex()) {
+				return;
+			}
+
+			mytab.goTo(index);
+		});
+	</script>
+</body>
+</html>
