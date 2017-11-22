@@ -14,6 +14,13 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .clearfix { zoom: 1; }
 .clearfix:before, .clearfix:after { display: block; height: 0; visibility: hidden; clear: both; content: ""; }
 
+/*block center*/
+.bc { display: block; margin: 0 auto; }
+
+/*display*/
+.block { display: block; }
+.inline { display: inline-block; }
+
 /*padding*/
 .p10 { padding: 10px; }
 .p20 { padding: 20px; }
@@ -25,6 +32,10 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .pr20 { padding-right: 20px; }
 .pb20 { padding-bottom: 20px; }
 .pl20 { padding-left: 20px; }
+.px10 { padding-left: 10px; padding-right: 10px; }
+.px20 { padding-left: 20px; padding-right: 20px; }
+.py10 { padding-top: 10px; padding-bottom: 10px; }
+.py20 { padding-top: 20px; padding-bottom: 20px; }
 
 /*margin*/
 .m10 { margin: 10px; }
@@ -37,6 +48,10 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .mr20 { margin-right: 20px; }
 .mb20 { margin-bottom: 20px; }
 .ml20 { margin-left: 20px; }
+.mx10 { margin-left: 10px; margin-right: 10px; }
+.mx20 { margin-left: 20px; margin-right: 20px; }
+.my10 { margin-top: 10px; margin-bottom: 10px; }
+.my20 { margin-top: 20px; margin-bottom: 20px; }
 
 /*text align*/
 .tc { text-align: center; }
@@ -46,18 +61,51 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 /*text overflow ellipsis*/
 .toe { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
+/*disabled*/
+.disabled, :disabled { position: relative; cursor: no-drop; opacity: .6; }
+
 /*form components*/
 .input { height: 30px; padding: 0 4px; border: 1px solid #dcdcdc; border-radius: 2px; }
+
 .checkbox { position: relative; display: inline-block; cursor: pointer; }
 .checkbox input[type=checkbox] { position: absolute; left: 0; opacity: 0; }
 .checkbox span { display: block; vertical-align: middle; font-size: 14px; }
 .checkbox span:before { display: inline-block; width: 18px; height: 18px; margin-right: 4px; border: 1px solid #dcdcdc; border-radius: 2px; vertical-align: middle; text-align: center; line-height: 18px; content: ""; font-size: 14px; }
-.checkbox input[type=checkbox]:checked + span:before { content: "\2714"; }
+.checkbox input[type=checkbox]:checked + span:before { content: "\2714"; color: #0866c6; }
+
 .radio { position: relative; display: inline-block; cursor: pointer; }
 .radio input[type=radio] { position: absolute; left: 0; opacity: 0; }
 .radio span { display: block; vertical-align: middle; font-size: 14px; }
 .radio span:before { display: inline-block; width: 16px; height: 16px; margin-right: 4px; border: 1px solid #dcdcdc; border-radius: 50%; box-sizing: border-box; vertical-align: middle; text-align: center; content: ""; font-size: 12px; }
-.radio input[type=radio]:checked + span:before { border-width: 4px; background: #1ba1e2; }
+.radio input[type=radio]:checked + span:before { border-width: 4px; background: #0866c6; }
+
+/*button*/
+.btn { display: inline-block; height: 30px; padding: 0 10px; overflow: hidden; background: #868e96; border: 1px solid #868e96; vertical-align: middle; line-height: 30px; text-align: center; text-overflow: ellipsis; text-decoration: none; white-space: nowrap; font-size: 16px; font-family: inherit; color: #fff; }
+.btn:hover { background: #727b84; border-color: #6c757d; }
+.btn.disabled, .btn:disabled { background: #868e96; border-color: #868e96; }
+
+.btn-blue:hover { background: #0753a1; border-color: #064d95; }
+.btn-blue, .btn-blue.disabled, .btn-blue:disabled { background: #0866c6; border-color: #0866c6; }
+.btn-blue.btn-outline, .btn-blue.btn-outline.disabled, .btn-blue.btn-outline:disabled { color: #0866c6; }
+
+.btn-yellow:hover { background: #da850a; border-color: #ce7d0a; }
+.btn-yellow, .btn-yellow.disabled, .btn-yellow:disabled { background: #f49917; border-color: #f49917; }
+.btn-yellow.btn-outline, .btn-yellow.btn-outline.disabled, .btn-yellow.btn-outline:disabled { color: #f49917; }
+
+.btn-red:hover { background: #c82333; border-color: #bd2130; }
+.btn-red, .btn-red.disabled, .btn-red:disabled { background: #dc3545; border-color: #dc3545; }
+.btn-red.btn-outline, .btn-red.btn-outline.disabled, .btn-red.btn-outline:disabled { color: #dc3545; }
+
+.btn-green:hover { background: #1c9a06; border-color: #1a8e06; }
+.btn-green, .btn-green.disabled, .btn-green:disabled { background: #23bf08; border-color: #23bf08; }
+.btn-green.btn-outline, .btn-green.btn-outline.disabled, .btn-green.btn-outline:disabled { color: #23bf08; }
+
+.btn-outline:hover { color: #fff; }
+.btn-outline, .btn-outline.disabled, .btn-outline:disabled { background: #fff; color: #868e96; }
+
+.btn-big { height: 40px; padding: 0 30px; line-height: 40px; font-size: 20px; }
+.btn-small { height: 26px; padding: 0 10px; line-height: 24px; font-size: 12px; }
+.btn-radius { border-radius: 2px; }
 
 /*布局*/
 
