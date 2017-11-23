@@ -1,6 +1,12 @@
 /*
 	常用样式
  	兼容：IE9
+ 	system-color
+ 	blue: 0866c6;
+ 	red: dc3545;
+ 	yellow: f49917;
+ 	green: 23bf08;
+ 	border: dcdcdc;
  */
 
 /*基本样式*/
@@ -59,6 +65,11 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .tc { text-align: center !important; }
 .tl { text-align: left !important; }
 .tr { text-align: right !important; }
+
+/*vertical align*/
+.vt { vertical-align: top; }
+.vm { vertical-align: middle; }
+.vb { vertical-align: bottom; }
 
 /*background color*/
 .bg-blue { background-color: #0866c6; }
