@@ -1,0 +1,12 @@
+.pagination { display: inline-block; vertical-align: middle; }
+.pagination_list { margin: 0; padding: 0; }
+.pagination_item { float: left; border: 1px solid #dcdcdc; }
+.pagination_item + .pagination_item { margin-left: -1px; }
+.pagination_item a { display: block; padding: 0 10px; line-height: 40px; text-decoration: none; color: #333; }
+.pagination_item a:hover { color: #0866c6; }
+
+.pagination_item.active { background: #0866c6; }
+.pagination_item.active a { color: #fff; }
+
+.pagination_info { line-height: 40px; }
+.pagination_info span { display: inline-block; margin: 0 4px; color: #f49917; }
