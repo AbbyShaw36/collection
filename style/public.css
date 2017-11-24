@@ -93,7 +93,7 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .toe { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
 /*disabled*/
-.disabled, :disabled { position: relative; cursor: no-drop; opacity: .6; }
+.disabled, :disabled { position: relative; cursor: not-allowed; pointer-events: none; opacity: .6; }
 
 /*组件*/
 
@@ -113,8 +113,8 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .radio { position: relative; display: inline-block; cursor: pointer; vertical-align: middle; }
 .radio input[type=radio] { position: absolute; left: 0; opacity: 0; }
 .radio span { display: block; vertical-align: middle; font-size: 14px; }
-.radio span:before { display: inline-block; width: 16px; height: 16px; margin-right: 4px; border: 1px solid #dcdcdc; border-radius: 50%; -webkit-box-sizing: border-box; box-sizing: border-box; vertical-align: middle; text-align: center; content: ""; font-size: 12px; }
-.radio input[type=radio]:checked + span:before { border-width: 4px; background: #0866c6; }
+.radio span:before { display: inline-block; width: 16px; height: 16px; padding: 3px; margin-right: 4px; background-color: #fff; background-clip: content-box; border: 1px solid #dcdcdc; border-radius: 50%; -webkit-box-sizing: border-box; box-sizing: border-box; vertical-align: middle; text-align: center; content: ""; font-size: 12px; }
+.radio input[type=radio]:checked + span:before { background-color: #0866c6; }
 
 .file { display: inline-block; position: relative; width: 300px; height: 30px; background: #fff; border: 1px solid #dcdcdc; vertical-align: middle; line-height: 26px; cursor: pointer; }
 .file input[type="file"] { position: absolute; left: 0; opacity: 0; }
@@ -124,7 +124,7 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 /*button*/
 .btn { display: inline-block; height: 30px; padding: 0 10px; overflow: hidden; background: #868e96; border: 1px solid #868e96; vertical-align: middle; line-height: 30px; text-align: center; text-overflow: ellipsis; text-decoration: none; white-space: nowrap; font-size: 14px; font-family: inherit; color: #fff; }
 .btn:hover { background: #727b84; border-color: #6c757d; }
-.btn.disabled, .btn:disabled { background: #868e96; border-color: #868e96; }
+.btn.disabled, .btn:disabled { display: inline-block; background: #868e96; border-color: #868e96; }
 
 .btn-blue:hover { background: #0753a1; border-color: #064d95; }
 .btn-blue, .btn-blue.disabled, .btn-blue:disabled { background: #0866c6; border-color: #0866c6; }
