@@ -20,6 +20,14 @@
 		</div>
 
 		<div class="mb20 clearfix">
+			<div class="dropdown open">
+				<button class="btn btn-radius btn-blue btn-outline dropdown_toggle">test</button>
+				<ul class="dropdown_menu">
+					<li><a href="#">test1</a></li>
+					<li><a href="#">test1</a></li>
+					<li><a href="#">test1</a></li>
+				</ul>
+			</div>
 			<div class="dropdown open fr">
 				<button class="btn btn-radius btn-blue btn-outline dropdown_toggle">test</button>
 				<ul class="dropdown_menu">
@@ -34,7 +42,10 @@
 			<form action="" class="form">
 				<fieldset>
 					<legend>表单名称</legend>
-					<p class="form_row"><label for="input1" class="label">用户名：</label><input type="text" class="input" placeholder="请输入用户名"></p>
+					<p class="form_row">
+						<label for="input1" class="label">用户名：</label><input type="text" class="input" placeholder="请输入用户名">
+						<span class="form_msg ml10">错误提示...</span>
+					</p>
 					<p class="form_row">
 						<label for="sex" class="label">性别：</label>
 						<label class="radio"><input type="radio" value="1" name="sex" checked><span>男</span></label>
