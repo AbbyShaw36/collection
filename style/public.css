@@ -156,10 +156,11 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .btn-radius { border-radius: 2px; }
 
 /*table*/
-.table { width: 100%; border-top: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc; line-height: 40px; }
-.table th, table td { padding: 0 10px; }
-.table th { text-align: left; }
+.table { width: 100%; border-top: 1px solid #dcdcdc; border-bottom: 1px solid #dcdcdc; text-align: left; }
+.table_title { line-height: 40px; }
+.table th, table td { padding: 4px 10px; }
 .table tr { border-top: 1px solid #dcdcdc; }
+.table_col_checkbox { width: 60px; }
 .table-striped tbody tr:nth-of-type(odd) { background: #e9ecef; }
 .table-border th, .table-border td { border: 1px solid #dcdcdc; }
 
