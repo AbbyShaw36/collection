@@ -13,7 +13,7 @@ function sort(arr, compare) {
 			a = arr[i];
 			b = arr[j];
 			
-			if (compare(a, b) < 0) {
+			if (!compare(a, b)) {
 				arr[i] = b;
 				arr[j] = a;
 			}
