@@ -189,23 +189,22 @@ input:not[type=raido], input:not[type=checkbox], button, textarea { border: none
 .col11 { width: 91.66666667%; }
 .col12 { width: 100%; }
 
-/*两列右侧自适应布局*/
-.c2la_l { position: relative; float: left; width: 360px; margin-right: -360px; }
-.c2la_r { float: right; width: 100%; }
-.c2la_rc { margin-left: 380px; }
+/*两列左侧自适应布局*/
+.c2la_l { float: left; width: 360px; margin-right: 20px; }
+.c2la_r { overflow: auto; }
 
 /*两列右侧自适应布局*/
 .c2ra_l { float: left; width: 100%; }
 .c2ra_lc { margin-right: 380px; }
-.c2ra_r { position: relative; float: right; width: 360px; margin-left: -360px; }
+.c2ra_r { float: right; width: 360px; margin-left: -100%; }
+
 
 /*三列中间自适应布局*/
-.c3ca_col { float: left; }
-.c3ca_l, .c3ca_r { position: relative; width: 180px; }
-.c3ca_l { margin-right: -180px; }
-.c3ca_r { float: right; margin-left: -180px; }
-.c3ca_c { width: 100%; }
-.c2ca_cc { margin: 0 200px; }
+.c3ca_w { position: relative; }
+.c3ca_l, .c3ca_r { position: absolute; top: 0; width: 180px; }
+.c3ca_l { left: 0; }
+.c3ca_r { right: 0; }
+.c3ca_c { margin: 0 200px; }
 
 /* media */
 
